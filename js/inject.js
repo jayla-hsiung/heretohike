@@ -4,7 +4,7 @@ async function injectHeader() {
   const header = document.getElementById("header");
   if (header) {
     try {
-      const res = await fetch("/components/header.html");
+      const res = await fetch("components/header.html");
       const html = await res.text();
       header.innerHTML = html; // Question: what does all of that mean
     } catch (err) {
@@ -19,7 +19,7 @@ async function inject(...elements) {
     const el = document.getElementById(element)
     if (el) {
       try {
-        const res = await fetch(`/components/${element}.html`);
+        const res = await fetch(`components/${element}.html`);
         const html = await res.text();
         el.innerHTML = html; // Question: what does all of that mean
       } catch (err) {
@@ -43,7 +43,7 @@ async function injectPromiseAll(...elements) {
       if (!el) return;
 
       try {
-        const res = await fetch(`./components/${element}.html`);
+        const res = await fetch(`components/${element}.html`);
         el.innerHTML = await res.text();
       } catch (err) {
         console.error(`Failed to inject ${element}:`, err);
