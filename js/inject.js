@@ -75,4 +75,4 @@ async function injectPromiseAll(...elements) {
 
 // document.addEventListener("DOMContentLoaded", injectHeader); // Question: what does this mean?
 
-document.addEventListener("DOMContentLoaded", () => inject("navbar","header","footer"))
+document.addEventListener("DOMContentLoaded", () => inject("header","footer"))
